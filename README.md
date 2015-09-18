@@ -1,7 +1,7 @@
 # deep-escape-html
 
 Deeply escape object's string properties for use in HTML.
-Build on top [escape-html] of (https://www.npmjs.com/package/escape-html).
+Build on top of [escape-html](https://www.npmjs.com/package/escape-html).
 
 ## Example
 
