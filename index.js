@@ -1,8 +1,8 @@
 var escape = require('escape-html')
 
-module.exports = function deepEscapeHtml(object) {
+module.exports = function deepEscapeHtml(object, matchHtmlRegExp) {
   if (typeof object == 'string') {
-    return escape(object)
+    return escape(object, matchHtmlRegExp)
   } else if (object && object.push) { // this is an array
     var newObject = []
     for (var index = 0; index < object.length; index++) {
@@ -19,4 +19,3 @@ module.exports = function deepEscapeHtml(object) {
     return object
   }
 }
-
