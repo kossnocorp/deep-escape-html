@@ -114,5 +114,12 @@ describe('deepEscapeHtml', function() {
     it('allows to override default matching rule', function() {
       assert(deepEscapeHtml("Sasha's", /[<>]/) == "Sasha's")
     })
+
+    it('affects nested strings as well', function() {
+      assert.deepEqual(
+        deepEscapeHtml({a: ["Sasha's"]}, /[<>]/),
+        {a: ["Sasha's"]}
+      )
+    })
   })
 })
