@@ -53,7 +53,6 @@ describe('deepEscapeHtml', function() {
         [{a: '&lt;script&gt;alert(&#39;PWNED&#39;)&lt;/script&gt;'}]
       )
     })
-
   })
 
   context('when object is passed', function() {
@@ -110,5 +109,17 @@ describe('deepEscapeHtml', function() {
       assert(deepEscapeHtml(Infinity) == Infinity)
     })
   })
-})
 
+  context('when second argument is true', function() {
+    it('forces usage of HTML5 standart', function() {
+      assert(deepEscapeHtml("Sasha's", true) == 'Sasha&apos;s')
+    })
+
+    it('affects nested strings as well', function() {
+      assert.deepEqual(
+        deepEscapeHtml({a: ["Sasha's"]}, /[<>]/),
+        {a: ['Sasha&apos;s']}
+      )
+    })
+  })
+})

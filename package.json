@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/kossnocorp/deep-escape-html",
   "dependencies": {
-    "escape-html": "^1.0.3"
+    "escape-html": "kossnocorp/escape-html#b5a0816"
   },
   "devDependencies": {
     "json-loader": "^0.5.3",
